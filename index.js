@@ -2,7 +2,6 @@ const express = require("express")
 const app = express()
 const bodyParser = require("body-parser")
 require("dotenv").config()
-require("sass")
 
 const homeController = require("./controllers/homeController")
 const produtosController = require("./controllers/produtosController")
