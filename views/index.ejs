@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Produtos</title>
-</head>
+<%- include("./partials/header.ejs") %>
 <body>
-    <% acharProdutos.forEach((produtos) => { %>
-        <h1>
-            <%= produtos.nomeProduto %>
-            <%= produtos.marcaProduto %>
-        </h1>
-
-        <h5>Peso</h5>
-            <p><%= produtos.pesoProduto %></p>
-        <h5>Linha</h5>
-            <p><%= produtos.linhaProduto %></p>
-        <h5>Preço</h5>
-            <p><%= produtos.precoProduto %></p>
-        <h5>Validade</h5>
-            <p><%= produtos.validadeProduto %></p>
-    <% }) %>
+    <%- include("./partials/pesquisar.ejs") %>
+    <%- include("./partials/produto.ejs") %>
 </body>
 </html>

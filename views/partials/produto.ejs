@@ -1,0 +1,22 @@
+<div class="container d-flex justify-content-center mt-5">
+    <div class="row">
+        <% acharProdutos.forEach((produtos) => { %>
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">
+                    <%= produtos.nomeProduto %>
+                    <%= produtos.marcaProduto %>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary"><%= produtos.linhaProduto %></h6>
+                <p class="card-text">
+                    Peso: <%= produtos.pesoProduto %><br>
+                    Preço: <%= produtos.precoProduto %><br>
+                    Validade: <%= produtos.validadeProduto %><br>
+                </p>
+                <a href="#" class="card-link">Detalhes</a>
+                <a href="#" class="card-link">Editar</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
