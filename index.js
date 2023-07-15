@@ -5,6 +5,7 @@ require("dotenv").config()
 
 const homeController = require("./controllers/homeController")
 const produtosController = require("./controllers/produtosController")
+const adminController = require("./controllers/adminController")
 
 app.set('view engine', 'ejs')
 app.use(express.static("assets"))
@@ -14,6 +15,7 @@ app.use(bodyParser.json())
 
 app.get("/", homeController)
 app.post("/novoproduto", produtosController)
+app.get("/admin", adminController)
 
 const port = process.env.PORT
 app.listen(port || 4040, console.log(`Server running in http://localhost:${port}`))
