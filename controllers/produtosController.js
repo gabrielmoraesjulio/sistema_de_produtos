@@ -13,6 +13,8 @@ router.post("/novoproduto", upload.single('imagemProduto'), async (req, res) => 
         validadeProduto: req.body.validadeProduto,
         imagemProduto: req.file.filename
     }])
+
+    res.redirect("/")
 })
 
 module.exports = router;

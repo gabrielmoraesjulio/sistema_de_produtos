@@ -3,7 +3,11 @@ const router = express.Router()
 
 router.get("/admin", async (req, res) => {
 
-    res.render("admin")
+    const paginaNav = 1
+
+    res.render("admin", {
+        paginaNav: paginaNav
+    })
     
 })
 
