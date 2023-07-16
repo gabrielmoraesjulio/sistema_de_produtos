@@ -1,13 +1,44 @@
 <div>
-    <form action="" method="post">
-        <% detalheProdutoVar.forEach((detalheProduto) => { %>
-            <input type="text" value="<%= detalheProduto.nomeProduto %>">
-            <input type="text" value="<%= detalheProduto.marcaProduto %>">
-            <input type="text" value="<%= detalheProduto.linhaProduto %>">
-            <input type="text" value="<%= detalheProduto.pesoProduto %>">
-            <input type="text" value="<%= detalheProduto.precoProduto %>">
-            <input type="text" value="<%= detalheProduto.validadeProduto %>">
-            <img src="/img/<%= detalheProduto.imagemProduto %>" alt="img_produto">
-        <% }) %>
-    </form>
+    <%
+    switch (linkButton) {
+        case "alterar":
+            %>
+                <form action="" method="post">
+                    <% detalheProdutoVar.forEach((detalheProduto) => { %>
+                        <input type="text" value="<%= detalheProduto.nomeProduto %>">
+                        <input type="text" value="<%= detalheProduto.marcaProduto %>">
+                        <input type="text" value="<%= detalheProduto.linhaProduto %>">
+                        <input type="text" value="<%= detalheProduto.pesoProduto %>">
+                        <input type="text" value="<%= detalheProduto.precoProduto %>">
+                        <input type="text" value="<%= detalheProduto.validadeProduto %>">
+                        <img src="/img/<%= detalheProduto.imagemProduto %>" alt="img_produto">
+                    <% }) %>
+                </form>
+            <%
+        break
+        case "detalhes":
+            %>
+                <% detalheProdutoVar.forEach((detalheProduto) => { %>
+                    <p><%= detalheProduto.nomeProduto %></p>
+                    <p><%= detalheProduto.marcaProduto %></p>
+                    <p><%= detalheProduto.linhaProduto %></p>
+                    <p><%= detalheProduto.pesoProduto %></p>
+                    <p><%= detalheProduto.precoProduto %></p>
+                    <p><%= detalheProduto.validadeProduto %></p>
+                    <div><img src="/img/<%= detalheProduto.imagemProduto %>" alt="img_produto"></div>
+                <% }) %>
+            <%
+        break
+        case undefined:
+        case null:
+            %>
+                <h1>Produto não localizado!</h1>
+            <%
+        break
+        default:
+            %>
+                <h1>Produto não localizado!</h1>
+            <%
+    }
+%>
 </div>

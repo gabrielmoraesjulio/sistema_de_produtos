@@ -5,14 +5,15 @@ const produtosModel = require("../models/Produtos")
 
 router.post("/alterar", async (req, res) => {
     const paginaNav = 1
-    
+    const linkButton = "alterar"
     const detalheProduto = await produtosModel.find({
         _id: req.body.idProduto
     })
 
-    res.render("detalheProduto", {
+    res.render("infoProduto", {
         detalheProdutoVar: detalheProduto,
-        paginaNav: paginaNav
+        paginaNav: paginaNav,
+        linkButton: linkButton
     })
 })
 
