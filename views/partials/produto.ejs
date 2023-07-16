@@ -25,15 +25,21 @@
                         <td><%= produtos.pesoProduto %></td>
                         <td><%= produtos.precoProduto %></td>
                         <td><%= produtos.validadeProduto %></td>
-                        <td>
-                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
-                                Editar
-                            </a>
-                        </td>
-                        <td>
-                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
-                                Detalhes
-                            </a>
+                        <td class="text-center">
+                            <form action="/alterar" method="post">
+                                <input type="hidden" name="idProduto" value="<%= produtos._id%>">
+                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                                    <button type="submit" class="btn btn-link">Alterar</button>                         
+                                </a>
+                            </form>
+                        </td>    
+                        <td class="text-center">
+                            <form action="/details" method="post">
+                                <input type="hidden" name="idProduto" value="<%= produtos._id%>">
+                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                                    <button type="submit" class="btn btn-link">Detalhes</button>                         
+                                </a>
+                            </form>
                         </td>                   
                     </tr>
                 </tbody>
