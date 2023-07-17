@@ -11,6 +11,8 @@ router.post("/novoproduto", upload.single('imagemProduto'), async (req, res) => 
         linhaProduto: req.body.linhaProduto,
         precoProduto: req.body.precoProduto,
         validadeProduto: req.body.validadeProduto,
+        disponivelProduto: req.body.disponivelProduto,
+        quantidadeProduto: req.body.quantidadeProduto,
         imagemProduto: req.file.filename
     }])
 

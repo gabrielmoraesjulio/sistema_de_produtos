@@ -1,4 +1,3 @@
-<div>
     <%
     switch (linkButton) {
         case "alterar":
@@ -11,7 +10,13 @@
                         <input type="text" value="<%= detalheProduto.pesoProduto %>">
                         <input type="text" value="<%= detalheProduto.precoProduto %>">
                         <input type="text" value="<%= detalheProduto.validadeProduto %>">
-                        <img src="/img/<%= detalheProduto.imagemProduto %>" alt="img_produto">
+                        <select>
+                            <option selected><%= detalheProduto.disponivelProduto %></option>
+                            <option value="Sim">Sim</option>
+                            <option value="Nao">Não</option>
+                        </select>
+                        <input type="text" value="<%= detalheProduto.quantidadeProduto %>">
+                        <img src="/img/<%= detalheProduto.imagemProduto %>" class="produto" alt="img_produto">
                     <% }) %>
                 </form>
             <%
@@ -19,13 +24,52 @@
         case "detalhes":
             %>
                 <% detalheProdutoVar.forEach((detalheProduto) => { %>
-                    <p><%= detalheProduto.nomeProduto %></p>
-                    <p><%= detalheProduto.marcaProduto %></p>
-                    <p><%= detalheProduto.linhaProduto %></p>
-                    <p><%= detalheProduto.pesoProduto %></p>
-                    <p><%= detalheProduto.precoProduto %></p>
-                    <p><%= detalheProduto.validadeProduto %></p>
-                    <div><img src="/img/<%= detalheProduto.imagemProduto %>" alt="img_produto"></div>
+                    <div class="container d-flex justify-content-center">
+                        <div class="row d-flex align-items-center">
+                            <div class="col">
+                                <img src="/img/<%= detalheProduto.imagemProduto %>" class="img-produto border" alt="img_produto">
+                            </div>
+                            <div class="col">
+                                <h2 class="fw-bold">
+                                    <%= detalheProduto.nomeProduto %>
+                                    <%= detalheProduto.marcaProduto %>
+                                </h2>
+                                <h4 class="fst-italic fw-normal">
+                                    <%= detalheProduto.linhaProduto %>
+                                </h4>
+                                <h6>
+                                    Peso:
+                                <p class="d-inline fw-normal">
+                                        <%= detalheProduto.pesoProduto %>
+                                    </p>
+                                </h6>
+                                <h6>
+                                    Preço:
+                                <p class="d-inline fw-normal">
+                                        <%= detalheProduto.precoProduto %>
+                                    </p>
+                                </h6>
+                                <h6>
+                                    Validade:
+                                <p class="d-inline fw-normal">
+                                        <%= detalheProduto.validadeProduto %>
+                                    </p>
+                                </h6>
+                                <h6>
+                                    Disponivel:
+                                <p class="d-inline fw-normal">
+                                        <%= detalheProduto.disponivelProduto %>
+                                    </p>
+                                </h6>
+                                <h6>
+                                    Quantidade:
+                                <p class="d-inline fw-normal">
+                                        <%= detalheProduto.quantidadeProduto %>
+                                    </p>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
                 <% }) %>
             <%
         break
@@ -41,4 +85,3 @@
             <%
     }
 %>
-</div>

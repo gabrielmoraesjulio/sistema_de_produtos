@@ -1,28 +1,50 @@
 <div class="container mt-5">
     <div class="row">
-        <form action="/novoproduto" method="post" enctype="multipart/form-data">
-            <label for="nomeProduto">Nome do Produto</label><br>
-                <input type="text" name="nomeProduto"><br>
+        <div class="col-6">
+            <h1 class="fst-italic">Cadastrar Novo Produto</h1>
+            <form action="/novoproduto" method="post" enctype="multipart/form-data">
+                <div class="input-group mb-3">
+                    <input type="text" name="nomeProduto" class="form-control" placeholder="Nome do Produto" aria-describedby="basic-addon1">
+                </div>
 
-            <label for="marcaProduto">Marca/Tipo do Produto</label><br>
-                <input type="text" name="marcaProduto"><br>
+                <div class="input-group mb-3">
+                    <input type="text" name="marcaProduto" class="form-control" placeholder="Marca/Tipo do Produto" aria-describedby="basic-addon1">
+                </div>
 
-            <label for="pesoProduto">Peso do Produto</label><br>
-                <input type="text" name="pesoProduto"><br>
+                <div class="input-group mb-3">
+                    <input type="text" name="pesoProduto" class="form-control" placeholder="Peso do Produto" aria-describedby="basic-addon1">
+                </div>
 
-            <label for="linhaProduto">Linha do Produto</label><br>
-                <input type="text" name="linhaProduto"><br>
+                <div class="input-group mb-3">
+                    <input type="text" name="linhaProduto" class="form-control" placeholder="Linha do Produto" aria-describedby="basic-addon1">
+                </div>
 
-            <label for="precoProduto">Preço do Produto</label><br>
-                <input type="text" name="precoProduto"><br>
+                <div class="input-group mb-3">
+                    <input type="text" name="precoProduto" class="form-control" placeholder="Preço do Produto" aria-describedby="basic-addon1">
+                </div>
 
-            <label for="validadeProduto">Validade do Produto</label><br>
-                <input type="text" name="validadeProduto"><br>
+                <label for="validadeProduto" class="form-label">Validade do Produto</label>
+                <div class="input-group mb-3">
+                    <input type="date" name="validadeProduto" class="form-control" placeholder="Validade do Produto" aria-describedby="basic-addon1">
+                </div>
 
-            <label for="imagemProduto">Imagem do Produto</label><br>
-                <input type="file" name="imagemProduto"><br><br>
+                <select name="disponivelProduto" class="form-select mb-3" id="inputGroupSelect01">
+                    <option selected>Disponivel?</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Nao">Não</option>
+                </select>
 
-            <button type="submit">Cadastrar</button>
-        </form>
+                <div class="input-group mb-3">
+                    <input type="text" name="quantidadeProduto" class="form-control" placeholder="Quantidade do Produto" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Imagem do Produto</label>
+                    <input name="imagemProduto" class="form-control" type="file" id="formFile">
+                </div>
+
+                <button type="submit" class="btn btn-outline-dark">Cadastrar</button>
+            </form>
+        </div>
     </div>
 </div>

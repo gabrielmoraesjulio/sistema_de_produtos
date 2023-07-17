@@ -26,6 +26,14 @@ const ProdutosSchema =  new mongoose.Schema({
         type: String,
         required: true
     },
+    disponivelProduto: {
+        type: String, 
+        required: true
+    },
+    quantidadeProduto: {
+        type: String,
+        required: true
+    },
     imagemProduto: {
         type: String,
         required: true
