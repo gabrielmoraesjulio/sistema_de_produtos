@@ -1,22 +1,23 @@
-    <%
+<%
     switch (linkButton) {
         case "alterar":
             %>
-                <form action="" method="post">
+                <form action="/alterarproduto" method="post">
                     <% detalheProdutoVar.forEach((detalheProduto) => { %>
-                        <input type="text" value="<%= detalheProduto.nomeProduto %>">
-                        <input type="text" value="<%= detalheProduto.marcaProduto %>">
-                        <input type="text" value="<%= detalheProduto.linhaProduto %>">
-                        <input type="text" value="<%= detalheProduto.pesoProduto %>">
-                        <input type="text" value="<%= detalheProduto.precoProduto %>">
-                        <input type="text" value="<%= detalheProduto.validadeProduto %>">
-                        <select>
+                        <input type="hidden" name="idProduto" value="<%= detalheProduto._id %>">
+                        <input type="text" value="<%= detalheProduto.nomeProduto %>" required name="alterarNomeProd">
+                        <input type="text" value="<%= detalheProduto.marcaProduto %>" required name="alterarMarcaProd">
+                        <input type="text" value="<%= detalheProduto.linhaProduto %>" required name="alterarLinhaProd">
+                        <input type="text" value="<%= detalheProduto.pesoProduto %>" required name="alterarPesoProd"> 
+                        <input type="text" value="<%= detalheProduto.precoProduto %>" required name="alterarPrecoProd">
+                        <input type="text" value="<%= detalheProduto.validadeProduto %>" required name="alterarValidadeProd">
+                        <select required name="alterarDisponivelProd">
                             <option selected><%= detalheProduto.disponivelProduto %></option>
                             <option value="Sim">Sim</option>
                             <option value="Nao">Não</option>
                         </select>
-                        <input type="text" value="<%= detalheProduto.quantidadeProduto %>">
-                        <img src="/img/<%= detalheProduto.imagemProduto %>" class="produto" alt="img_produto">
+                        <input type="text" value="<%= detalheProduto.quantidadeProduto %>" required name="alterarQuantidadeProd">
+                        <button type="submit" class="btn btn-outline-dark">Alterar</button>
                     <% }) %>
                 </form>
             <%

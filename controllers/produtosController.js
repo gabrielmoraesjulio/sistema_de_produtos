@@ -19,4 +19,18 @@ router.post("/novoproduto", upload.single('imagemProduto'), async (req, res) => 
     res.redirect("/")
 })
 
+router.post("/alterarproduto", async (req, res) => {
+    await produtosModel.updateOne({_id: req.body.idProduto}, {
+        nomeProduto: req.body.alterarNomeProd,
+        marcaProduto: req.body.alterarMarcaProd,
+        pesoProduto: req.body.alterarPesoProd,
+        linhaProduto: req.body.alterarLinhaProd,
+        precoProduto: req.body.alterarPrecoProd,
+        validadeProduto: req.body.alterarValidadeProd,
+        disponivelProduto: req.body.alterarDisponivelProd,
+        quantidadeProduto: req.body.alterarQuantidadeProd,
+    })
+    res.redirect("/")
+})
+
 module.exports = router;
