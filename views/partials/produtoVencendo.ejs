@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <h1 class="fst-italic fw-bold text-center mb-3">Vence Amanhã</h1>
+        <table class="table table-bordered">
+            <% produtosVencendo.forEach((vencendo) => { %>
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Linha</th>
+                        <th scope="col">Peso</th>
+                        <th scope="col">Preço</th>
+                        <th scope="col">Validade</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Detalhes</th>
+                        <th scope="col">Excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><%= vencendo._id %></th>
+                        <td>
+                            <%= vencendo.nomeProduto %>
+                            <%= vencendo.marcaProduto %>
+                        </td>
+                        <td><%= vencendo.linhaProduto %></td>
+                        <td><%= vencendo.pesoProduto %></td>
+                        <td><%= vencendo.precoProduto %></td>
+                        <td><%= vencendo.validadeProduto %></td>
+                        <td class="text-center">
+                            <form action="/alterar" method="post">
+                                <input type="hidden" name="idProduto" value="<%= vencendo._id%>">
+                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                                    <button type="submit" class="btn btn-link">Alterar</button>                         
+                                </a>
+                            </form>
+                        </td>    
+                        <td class="text-center">
+                            <form action="/details" method="post">
+                                <input type="hidden" name="idProduto" value="<%= vencendo._id%>">
+                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                                    <button type="submit" class="btn btn-link">Detalhes</button>                         
+                                </a>
+                            </form>
+                        </td>
+                        <td class="text-center">
+                            <form action="/delete" method="post">
+                                <input type="hidden" name="idProduto" value="<%= vencendo._id%>">
+                                <input type="hidden" name="deletarImagem" value="<%= vencendo.imagemProduto%>">
+                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                                    <button type="submit" class="btn btn-link">Excluir</button>                         
+                                </a>
+                            </form>
+                        </td>                    
+                    </tr>
+                </tbody>
+            <% }) %>
+        </table>
+    </div>
+</div>
