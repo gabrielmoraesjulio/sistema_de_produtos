@@ -44,4 +44,15 @@ router.post("/delete", async (req, res) => {
     res.redirect("/")
 })
 
+router.post("/alterarimg", upload.single('alterarImagemProd'), async (req, res) => {
+    await produtosModel.findOneAndUpdate({_id: req.body.idProduto}, {
+        imagemProduto: req.file.filename
+    })
+
+    let fspath = (path.join(`assets/img/${req.body.deletarImagem}`))
+    fs.unlinkSync(fspath)
+
+    res.redirect("/")
+})
+
 module.exports = router;

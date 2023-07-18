@@ -2,58 +2,72 @@
     switch (linkButton) {
         case "alterar":
             %>
-                <div class="container mb-5">
-                    <form action="/alterarproduto" method="post">
-                        <% detalheProdutoVar.forEach((detalheProduto) => { %>
-                            <h1 class="fst-italic fw-bold text-center">Alterar Informações do Produto</h1>
-                                <input type="hidden" name="idProduto" value="<%= detalheProduto._id %>">
+                <% detalheProdutoVar.forEach((detalheProduto) => { %>
+                    <div class="container d-flex justify-content-center mb-5">
+                        <div class="row">
+                            <div class="col">
+                                <form action="/alterarproduto" class="mb-5" method="post">                          
+                                    <h1 class="fst-italic fw-bold text-center mb-3">Alterar Informações do Produto</h1>
+                                        <input type="hidden" name="idProduto" value="<%= detalheProduto._id %>">
 
-                                <label for="alterarNomeProd" class="form-label">Alterar Nome do Produto</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" value="<%= detalheProduto.nomeProduto %>" required name="alterarNomeProd" class="form-control" placeholder="Nome do Produto" aria-describedby="basic-addon1" required>
-                                </div>
+                                        <label for="alterarNomeProd" class="form-label">Alterar Nome do Produto</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" value="<%= detalheProduto.nomeProduto %>" required name="alterarNomeProd" class="form-control" placeholder="Nome do Produto" aria-describedby="basic-addon1" required>
+                                        </div>
 
-                                <label for="alterarMarcaProd" class="form-label">Alterar Marca do Produto</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" value="<%= detalheProduto.marcaProduto %>" required name="alterarMarcaProd" class="form-control" placeholder="Marca/Tipo do Produto" aria-describedby="basic-addon1" required>
-                                </div>
+                                        <label for="alterarMarcaProd" class="form-label">Alterar Marca do Produto</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" value="<%= detalheProduto.marcaProduto %>" required name="alterarMarcaProd" class="form-control" placeholder="Marca/Tipo do Produto" aria-describedby="basic-addon1" required>
+                                        </div>
 
-                                
-                                <label for="alterarLinhaProd" class="form-label">Alterar Linha do Produto</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" value="<%= detalheProduto.linhaProduto %>" required name="alterarLinhaProd" class="form-control" placeholder="Peso do Produto" aria-describedby="basic-addon1" required>
-                                </div>
+                                        
+                                        <label for="alterarLinhaProd" class="form-label">Alterar Linha do Produto</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" value="<%= detalheProduto.linhaProduto %>" required name="alterarLinhaProd" class="form-control" placeholder="Peso do Produto" aria-describedby="basic-addon1" required>
+                                        </div>
 
-                                <label for="alterarPesoProd" class="form-label">Alterar Peso do Produto</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" value="<%= detalheProduto.pesoProduto %>" required name="alterarPesoProd" class="form-control" placeholder="Linha do Produto" aria-describedby="basic-addon1" required>
-                                </div>
+                                        <label for="alterarPesoProd" class="form-label">Alterar Peso do Produto</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" value="<%= detalheProduto.pesoProduto %>" required name="alterarPesoProd" class="form-control" placeholder="Linha do Produto" aria-describedby="basic-addon1" required>
+                                        </div>
 
-                                <label for="alterarPrecoProd" class="form-label">Alterar Preço do Produto</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" value="<%= detalheProduto.precoProduto %>" required name="alterarPrecoProd" class="form-control" placeholder="Preço do Produto" aria-describedby="basic-addon1" required>
-                                </div>
+                                        <label for="alterarPrecoProd" class="form-label">Alterar Preço do Produto</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" value="<%= detalheProduto.precoProduto %>" required name="alterarPrecoProd" class="form-control" placeholder="Preço do Produto" aria-describedby="basic-addon1" required>
+                                        </div>
 
-                                <label for="alterarValidadeProd" class="form-label">Validade do Produto</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" value="<%= detalheProduto.validadeProduto %>" required name="alterarValidadeProd" class="form-control" placeholder="Preço do Produto" aria-describedby="basic-addon1" required>
-                                </div>
+                                        <label for="alterarValidadeProd" class="form-label">Validade do Produto</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" value="<%= detalheProduto.validadeProduto %>" required name="alterarValidadeProd" class="form-control" placeholder="Preço do Produto" aria-describedby="basic-addon1" required>
+                                        </div>
 
-                                <label for="alterarDisponivelProd" class="form-label">Alterar Disponibilidade do Produto</label>
-                                <select required name="alterarDisponivelProd" class="form-select mb-3" id="inputGroupSelect01" required>
-                                    <option selected><%= detalheProduto.disponivelProduto %></option>
-                                    <option value="Sim">Sim</option>
-                                    <option value="Nao">Não</option>
-                                </select>
+                                        <label for="alterarDisponivelProd" class="form-label">Alterar Disponibilidade do Produto</label>
+                                        <select required name="alterarDisponivelProd" class="form-select mb-3" id="inputGroupSelect01" required>
+                                            <option selected><%= detalheProduto.disponivelProduto %></option>
+                                            <option value="Sim">Sim</option>
+                                            <option value="Nao">Não</option>
+                                        </select>
 
-                                <label for="alterarQuantidadeProd" class="form-label">Alterar Quantidade de Produto</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" value="<%= detalheProduto.quantidadeProduto %>" required name="alterarQuantidadeProd" class="form-control" placeholder="Quantidade do Produto" aria-describedby="basic-addon1" required>
-                                </div>
-                            <button type="submit" class="btn btn-outline-dark">Alterar</button>
-                        <% }) %>
-                    </form>
-                </div>
+                                        <label for="alterarQuantidadeProd" class="form-label">Alterar Quantidade de Produto</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" value="<%= detalheProduto.quantidadeProduto %>" required name="alterarQuantidadeProd" class="form-control" placeholder="Quantidade do Produto" aria-describedby="basic-addon1" required>
+                                        </div>
+                                    <button type="submit" class="btn btn-outline-dark">Alterar</button>                                   
+                                </form>
+                                <form action="/alterarimg" method="post" enctype="multipart/form-data">
+                                    <h1 class="fst-italic fw-bold text-center mb-3">Alterar Imagem do Produto</h1>
+                                    <input type="hidden" name="idProduto" value="<%= detalheProduto._id %>">
+                                    <input type="hidden" name="deletarImagem" value="<%= detalheProduto.imagemProduto %>">
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label">Alterar Imagem do Produto</label>
+                                        <input name="alterarImagemProd" class="form-control" type="file" id="formFile" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-outline-dark">Alterar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
             <%
         break
         case "detalhes":
