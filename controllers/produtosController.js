@@ -2,6 +2,8 @@ const express = require("express")
 const router = express.Router()
 const produtosModel = require("../models/Produtos")
 const upload = require("../config/multer")
+const fs = require("fs")
+const path = require("path")
 
 router.post("/novoproduto", upload.single('imagemProduto'), async (req, res) => {
     await produtosModel.insertMany([{
@@ -30,6 +32,15 @@ router.post("/alterarproduto", async (req, res) => {
         disponivelProduto: req.body.alterarDisponivelProd,
         quantidadeProduto: req.body.alterarQuantidadeProd,
     })
+    res.redirect("/")
+})
+
+router.post("/delete", async (req, res) => {
+    await produtosModel.deleteOne({_id: {$gte: req.body.idProduto}})
+
+    let fspath = (path.join(`assets/img/${req.body.deletarImagem}`))
+    fs.unlinkSync(fspath)
+
     res.redirect("/")
 })
 

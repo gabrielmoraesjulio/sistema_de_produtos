@@ -11,6 +11,7 @@
                     <th scope="col">Validade</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Detalhes</th>
+                    <th scope="col">Excluir</th>
                 </tr>
             </thead>
             <% acharProdutos.forEach((produtos) => { %>
@@ -40,7 +41,16 @@
                                     <button type="submit" class="btn btn-link">Detalhes</button>                         
                                 </a>
                             </form>
-                        </td>                   
+                        </td>
+                        <td class="text-center">
+                            <form action="/delete" method="post">
+                                <input type="hidden" name="idProduto" value="<%= produtos._id%>">
+                                <input type="hidden" name="deletarImagem" value="<%= produtos.imagemProduto%>">
+                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+                                    <button type="submit" class="btn btn-link">Excluir</button>                         
+                                </a>
+                            </form>
+                        </td>                    
                     </tr>
                 </tbody>
             <% }) %>

@@ -21,6 +21,7 @@ app.get("/admin", adminController)
 app.post("/details", detalhesController)
 app.post("/alterar", alterarController)
 app.post("/alterarproduto", produtosController)
+app.post("/delete", produtosController)
 
 const port = process.env.PORT
 app.listen(port || 4040, console.log(`Server running in http://localhost:${port}`))
