@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 
 app.get("/", homeController)
 app.post("/novoproduto", produtosController)
-app.get("/admin", adminController)
+app.get("/adicionar", adminController)
 app.post("/details", detalhesController)
 app.post("/alterar", alterarController)
 app.post("/alterarproduto", produtosController)
